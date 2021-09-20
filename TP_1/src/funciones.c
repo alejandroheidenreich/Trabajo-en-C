@@ -60,7 +60,7 @@ long int Factorial(float n){
 
 	decimal = Decimales(n);
 
-	if(decimal == 0){
+	if(decimal == 0 && n != 0){
 		numero = (long int)n;
 		if(numero == 1){
 		fact = 1;
@@ -86,12 +86,16 @@ float Resta(float a, float b){
 	return resta;
 }
 
-float Division(float a, float b){
-	float division=0;
-	if(b != 0){
-	division = (float)a/b;
+int Division(float a, float b, float* division){
+	int divisionF=0;
+	if(b == 0){
+		divisionF=1;
 	}
-	return division;
+	else{
+		*division = a/b;
+	}
+
+	return divisionF;
 }
 
 float Multiplicacion(float a, float b){

@@ -31,7 +31,7 @@ float Resta(float a, float b);
 /// @fn float Division(float, float)
 /// @param a b - recibe 2 numeros, verifica que el dividendo no sea cero y los divide
 /// @return - devuelve el resultado de la division, en caso contrario cero
-float Division(float a, float b);
+int Division(float a, float b, float* division);
 
 /// @fn float Multiplicacion(float, float)
 /// @param a b - recibe 2 numeros y los multiplica

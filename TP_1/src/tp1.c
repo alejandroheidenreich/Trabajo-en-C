@@ -37,6 +37,7 @@ int main(void) {
 	int flagMenuB = 1;
 	int flagOp = 1;
 	float a,b,suma,resta,multiplicacion,division;
+	int flagDivision;
 	long int factorialA,factorialB;
 
 	setbuf(stdout, NULL);
@@ -91,7 +92,7 @@ int main(void) {
 			else{
 				suma = Suma(a,b);
 				resta = Resta(a,b);
-				division = Division(a,b);
+				flagDivision = Division(a,b,&division);
 				multiplicacion = Multiplicacion(a,b);
 				factorialA = Factorial(a);
 				factorialB = Factorial(b);
@@ -106,7 +107,7 @@ int main(void) {
 			else{
 				printf("a) El resultado de A+B es: %.3f\n",suma);
 				printf("b) El resultado de A-B es: %.3f\n",resta);
-				if(division){
+				if(flagDivision==0){
 					printf("c) El resultado de A/B es: %.3f\n",division);
 				}
 				else{
