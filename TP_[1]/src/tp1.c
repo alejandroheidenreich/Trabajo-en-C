@@ -92,6 +92,7 @@ int main(void) {
 			else{
 				suma = Suma(a,b);
 				resta = Resta(a,b);
+
 				flagDivision = Division(a,b,&division);
 				multiplicacion = Multiplicacion(a,b);
 				factorialA = Factorial(a);

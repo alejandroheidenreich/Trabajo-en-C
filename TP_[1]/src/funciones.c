@@ -60,7 +60,7 @@ long int Factorial(float n){
 
 	decimal = Decimales(n);
 
-	if(decimal == 0 && n != 0){
+	if(decimal == 0 && n > 0){
 		numero = (long int)n;
 		if(numero == 1){
 		fact = 1;
@@ -69,7 +69,6 @@ long int Factorial(float n){
 			fact = numero * Factorial(numero-1);
 		}
 	}
-
 	return fact;
 
 }
