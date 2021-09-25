@@ -42,6 +42,7 @@ float PedirNumero(char mensaje[], char error[]){
         else{
         	fail=1;
         	mensaje=error;
+        	break;
         }
     }
 	}while (fail);
