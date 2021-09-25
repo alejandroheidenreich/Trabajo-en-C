@@ -117,16 +117,22 @@ int main(void) {
 				}
 				printf("d) El resultado de A*B es: %.3f\n",multiplicacion);
 				if (flagFactA == 0){
-					printf("e) El factorial de A no se pudo calcular ");
+					printf("e.1) El factorial de A no se pudo calcular ");
+				}
+				else if (flagFactA == -1){
+					printf("e.1) El factorial de A es demasiado largo para mostrar \n");
 				}
 				else{
-					printf("e) El factorial de A es: %f ", factorialA);
+					printf("e.1) El factorial de A es: %f \n", factorialA);
 				}
 				if (flagFactB == 0){
-					printf("y El factorial de B no se pudo calcular\n");
+					printf("e.2) El factorial de B no se pudo calcular\n");
 				}
+				else if (flagFactB == -1){
+									printf("e.2) El factorial de B es demasiado largo para mostrar\n");
+								}
 				else{
-					printf("y El factorial de B es: %f\n", factorialB);
+					printf("e.2) El factorial de B es: %f\n", factorialB);
 				}
 				printf("|=======================================================================================|\n");
 			}

@@ -61,13 +61,20 @@ int Factorial(double numero,double *factorial){
 
     decimal = Decimales(numero);
 
-    if(decimal == 0 && numero > 0 && numero <= 170){
-    	fact=1;
-        for(int i=(numero-1); i > 1 ; i--){
-            numero *= i;
-        }
 
-        *factorial = numero;
+    if(decimal == 0 && numero > 0){ // && numero <= 170
+    	 if(numero > 170){
+    		 fact=-1;
+    	 }
+    	 else{
+    		 fact=1;
+    		 for(int i=(numero-1); i > 1 ; i--){
+    			 numero *= i;
+    		 }
+
+    		 *factorial = numero;
+    	 }
+
     }
 
     return fact;
