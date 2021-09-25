@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "funciones.h"
 #include <unistd.h>
-#define MAX 100
+#define MAX 8
 
 
 int Decimales(float n){
@@ -34,17 +34,23 @@ float PedirNumero(char mensaje[], char error[]){
 
     largo = strlen(pedido);
 
-    for (int i=0;i<largo;i++){
-
-    	if (isdigit(pedido[i]) || pedido[i] == 44 || pedido[i] == 45 || pedido[i] == 46){
-    		fail=0;
-        }
-        else{
-        	fail=1;
-        	mensaje=error;
-        	break;
-        }
+    if(largo>8){
+    	fail=1;
+    	mensaje=error;
     }
+    else{
+		for (int i=0;i<largo;i++){
+
+			if (isdigit(pedido[i]) || pedido[i] == 44 || pedido[i] == 45 || pedido[i] == 46){
+				fail=0;
+			}
+			else{
+				fail=1;
+				mensaje=error;
+				break;
+			}
+		}
+	}
 	}while (fail);
 
 	resultado = (float)atof(pedido);
