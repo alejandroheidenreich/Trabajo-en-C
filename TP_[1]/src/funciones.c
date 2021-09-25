@@ -4,10 +4,10 @@
 #include <ctype.h>
 #include "funciones.h"
 #include <unistd.h>
-#define MAX 8
+#define MAX 10
 
 
-int Decimales(float n){
+int Decimales(double n){
 	int decimales = 0;
 	int entero;
 	entero = (int)n;
@@ -22,10 +22,10 @@ int Decimales(float n){
 	return decimales;
 }
 
-float PedirNumero(char mensaje[], char error[]){
+double PedirNumero(char mensaje[], char error[]){
 	char pedido[MAX];
 	int largo, fail;
-	float resultado;
+	double resultado;
 
 	do{
 	printf("%s", mensaje);
@@ -56,55 +56,51 @@ float PedirNumero(char mensaje[], char error[]){
 	return resultado;
 }
 
+int Factorial(double numero,double *factorial){
+    int fact=0,decimal;
 
-long int Factorial(float n){
-	int  decimal;
-	long int fact, numero;
+    decimal = Decimales(numero);
 
-	fact=0;
+    if(decimal == 0 && numero > 0 && numero <= 170){
+    	fact=1;
+        for(int i=(numero-1); i > 1 ; i--){
+            numero *= i;
+        }
 
-	decimal = Decimales(n);
+        *factorial = numero;
+    }
 
-	if(decimal == 0 && n > 0){
-		numero = (long int)n;
-		if(numero == 1){
-		fact = 1;
-		}
-		else{
-			fact = numero * Factorial(numero-1);
-		}
-	}
-	return fact;
-
+    return fact;
 }
 
-float Suma(float a, float b){
-	float suma;
-	suma = a+b;
+
+double Suma(double a, double b){
+	double suma;
+	suma = a+(b);
 	return suma;
 }
 
-float Resta(float a, float b){
-	float resta;
-	resta = a-b;
+double Resta(double a, double b){
+	double resta;
+	resta = a-(b);
 	return resta;
 }
 
-int Division(float a, float b, float* division){
+int Division(double a, double b, double* division){
 	int divisionF=0;
 	if(b == 0){
 		divisionF=1;
 	}
 	else{
-		*division = a/b;
+		*division = a/(b);
 	}
 
 	return divisionF;
 }
 
-float Multiplicacion(float a, float b){
-	float multiplicacion;
-	multiplicacion = a*b;
+double Multiplicacion(double a, double b){
+	double multiplicacion;
+	multiplicacion = a*(b);
 	return multiplicacion;
 }
 

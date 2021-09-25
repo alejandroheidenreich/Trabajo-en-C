@@ -36,9 +36,9 @@ int main(void) {
 	int flagMenuA = 1;
 	int flagMenuB = 1;
 	int flagOp = 1;
-	float a,b,suma,resta,multiplicacion,division;
+	double a,b,suma,resta,multiplicacion,division,factorialA,factorialB;
 	int flagDivision;
-	long int factorialA,factorialB;
+	int flagFactA,flagFactB;
 
 	setbuf(stdout, NULL);
 
@@ -94,11 +94,10 @@ int main(void) {
 			else{
 				suma = Suma(a,b);
 				resta = Resta(a,b);
-
 				flagDivision = Division(a,b,&division);
 				multiplicacion = Multiplicacion(a,b);
-				factorialA = Factorial(a);
-				factorialB = Factorial(b);
+				flagFactA = Factorial(a,&factorialA);
+				flagFactB = Factorial(b,&factorialB);
 				flagOp = 0;
 				printf("Operaciones finalizadas.\n");
 			}
@@ -117,17 +116,17 @@ int main(void) {
 					printf("c) No es posible dividir por cero\n");
 				}
 				printf("d) El resultado de A*B es: %.3f\n",multiplicacion);
-				if (factorialA == 0){
-					printf("e) El factorial de A no se puede calcular ");
+				if (flagFactA == 0){
+					printf("e) El factorial de A no se pudo calcular ");
 				}
 				else{
-					printf("e) El factorial de A es: %ld ", factorialA);
+					printf("e) El factorial de A es: %f ", factorialA);
 				}
-				if (factorialB == 0){
-					printf("y El factorial de B no se puede calcular\n");
+				if (flagFactB == 0){
+					printf("y El factorial de B no se pudo calcular\n");
 				}
 				else{
-					printf("y El factorial de B es: %ld\n", factorialB);
+					printf("y El factorial de B es: %f\n", factorialB);
 				}
 				printf("|=======================================================================================|\n");
 			}
