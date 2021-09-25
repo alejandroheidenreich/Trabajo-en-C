@@ -80,10 +80,12 @@ int main(void) {
 		case 1:
 			a = PedirNumero("Ingrese 1er operando: \n", "Error: Ingrese un operando valido: \n");
 			flagMenuA = 0;
+			flagOp = 1;
 			break;
 		case 2:
 			b = PedirNumero("Ingrese 2do operando: \n", "Error: Ingrese un operando valido: \n");
 			flagMenuB = 0;
+			flagOp = 1;
 			break;
 		case 3:
 			if (flagMenuA || flagMenuB){
@@ -127,6 +129,7 @@ int main(void) {
 				else{
 					printf("y El factorial de B es: %ld\n", factorialB);
 				}
+				printf("|=======================================================================================|\n");
 			}
 			break;
 		default:
