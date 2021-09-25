@@ -41,14 +41,12 @@ float PedirNumero(char mensaje[], char error[]){
     else{
 		for (int i=0;i<largo;i++){
 
-			if (isdigit(pedido[i]) || pedido[i] == 44 || pedido[i] == 45 || pedido[i] == 46){
-				fail=0;
-			}
-			else{
+			if (!(isdigit(pedido[i]) || pedido[i] == 45 || pedido[i] == 46)){
 				fail=1;
 				mensaje=error;
 				break;
 			}
+			fail=0;
 		}
 	}
 	}while (fail);
