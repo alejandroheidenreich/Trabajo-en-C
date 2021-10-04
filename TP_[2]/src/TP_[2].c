@@ -57,8 +57,9 @@ int main(void) {
 		printf("|| Menu de Control de Empleados ||\n");
 		printf("==================================\n\n");
 
-		printf("\t1- ALTAS\n\t2- MODIFICAR\n\t3- BAJAS\n\t4- INFORMAR\n\t5- SALIR\n\n");
-		opcion = IngresarEntero("\n\tIngrese una opcion: ",1,5);
+		printf("\t1- ALTAS\n\t2- MODIFICAR\n\t3- BAJAS\n\t4- INFORMAR\n\t5- SALIR\n\n\n\t");
+
+		opcion = IngresarEntero("Ingrese una opcion: ",1,5);
 
 		switch(opcion){
 		case 1:

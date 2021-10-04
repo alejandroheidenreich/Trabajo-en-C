@@ -4,18 +4,83 @@
 #include <ctype.h>
 #include <string.h>
 #include "input.h"
+#define MAX 1000
+
+int PedirValidoNumeroEntero(char mensaje[], char error[]){
+	char pedido[MAX];
+	int largo, fail;
+	int resultado;
+
+	do{
+		printf("%s", mensaje);
+		fflush(stdin);
+		gets(pedido);
+
+		largo = strlen(pedido);
+
+		for (int i=0;i<largo;i++){
+
+
+			if (!(isdigit(pedido[i]))){
+				fail=1;
+				printf("%s",error);
+				break;
+			}
+			else{
+				fail=0;
+			}
+		}
+
+	} while (fail==1);
+
+	resultado = atoi(pedido);
+
+	return resultado;
+}
+
+float PedirValidoNumeroFlotante(char mensaje[], char error[]){
+	char pedido[MAX];
+	int largo, fail;
+	float resultado;
+
+	do{
+		printf("%s", mensaje);
+		fflush(stdin);
+		gets(pedido);
+
+		largo = strlen(pedido);
+
+		for (int i=0;i<largo;i++){
+
+
+			if (!(isdigit(pedido[i]))){
+				fail=1;
+				printf("%s",error);
+				break;
+			}
+			else{
+				fail=0;
+			}
+		}
+
+	} while (fail==1);
+
+	resultado = atof(pedido);
+
+	return resultado;
+}
+
 
 int IngresarEntero(char mensaje[],int min,int max){
 	int numero;
 
-	printf("%s", mensaje);
-	fflush(stdin);
-	scanf("%d", &numero);
+
+	numero = PedirValidoNumeroEntero(mensaje,"ERROR DATO INVALIDO - ");
+
 	while(numero <min || numero > max){
 		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
-		printf("%s", mensaje);
-		fflush(stdin);
-		scanf("%d", &numero);
+
+		numero = PedirValidoNumeroEntero(mensaje,"ERROR DATO INVALIDO - ");
 	}
 
 	return numero;
@@ -25,14 +90,10 @@ int IngresarEntero(char mensaje[],int min,int max){
 float IngresarFlotante(char mensaje[],int min,int max){
 	float numero;
 
-	printf("%s", mensaje);
-	fflush(stdin);
-	scanf("%f", &numero);
+	numero = PedirValidoNumeroFlotante(mensaje, "ERROR DATO INVALIDO - ");
 	while(numero <min || numero > max){
 		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
-		printf("%s", mensaje);
-		fflush(stdin);
-		scanf("%f", &numero);
+		numero = PedirValidoNumeroFlotante(mensaje, "ERROR DATO INVALIDO - ");
 	}
 
 	return numero;

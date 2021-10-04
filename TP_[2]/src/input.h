@@ -2,6 +2,18 @@
 #ifndef INPUT_H_
 #define INPUT_H_
 
+/// @fn int PedirValidoNumeroEntero(char[], char[])
+/// @param mensaje se recibe para imprimir
+/// @param error se recibe para imprimir en caso de error de validacion
+/// @return devuelve el numero entero validado
+int PedirValidoNumeroEntero(char mensaje[], char error[]);
+
+/// @fn float PedirValidoNumeroFlotante(char[], char[])
+/// @param mensaje se recibe para imprimir
+/// @param error se recibe para imprimir en caso de error de validacion
+/// @return devuelve el numero flotante validado
+float PedirValidoNumeroFlotante(char mensaje[], char error[]);
+
 /// @fn int IngresarEntero(char[], int, int)
 /// @param mensaje se recibe para imprimir
 /// @param min el intervalo minimo del numero a ingresar
