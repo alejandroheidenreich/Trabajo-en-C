@@ -28,9 +28,9 @@ Employee CrearEmployee(int id){
 		printf("\n");
 		IngresarCadena("Ingrese Apellido del Empleado: ", unEmpleado.lastName);
 		printf("\n");
-		unEmpleado.salary = IngresarFlotante("Ingrese Salario del Empleado: ", 1,100000);
+		unEmpleado.salary = IngresarFlotante("Ingrese Salario del Empleado: ", 1,1000000);
 		printf("\n");
-		unEmpleado.sector = IngresarEntero("Ingrese Sector del Empleado: ", 1,100);
+		unEmpleado.sector = IngresarEntero("Ingrese Sector del Empleado: ", 1,1000);
 		printf("\n");
 
 

@@ -17,7 +17,7 @@ int IngresarEntero(char mensaje[],int min,int max){
 	fflush(stdin);
 	scanf("%d", &numero);
 	while(numero <min || numero > max){
-		printf("ERROR DATO INVALIDO - ");
+		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
 		printf("%s", mensaje);
 		fflush(stdin);
 		scanf("%d", &numero);
@@ -34,7 +34,7 @@ float IngresarFlotante(char mensaje[],int min,int max){
 	fflush(stdin);
 	scanf("%f", &numero);
 	while(numero <min || numero > max){
-		printf("ERROR DATO INVALIDO - ");
+		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
 		printf("%s", mensaje);
 		fflush(stdin);
 		scanf("%f", &numero);
