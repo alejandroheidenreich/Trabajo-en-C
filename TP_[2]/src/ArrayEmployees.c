@@ -1,9 +1,4 @@
-/*
- * func.c
- *
- *  Created on: 27 sep. 2021
- *      Author: tentative
- */
+
 #include "ArrayEmployees.h"
 #include "ExtraEmployees.h"
 #include <stdio.h>

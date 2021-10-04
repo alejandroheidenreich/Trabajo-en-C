@@ -1,9 +1,4 @@
-/*
- * func.h
- *
- *  Created on: 27 sep. 2021
- *      Author: tentative
- */
+
 
 #ifndef ARRAYEMPLOYEES_H_
 #define ARRAYEMPLOYEES_H_

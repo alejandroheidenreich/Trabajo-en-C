@@ -1,9 +1,4 @@
-/*
- * input.c
- *
- *  Created on: 28 sep. 2021
- *      Author: tentative
- */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>

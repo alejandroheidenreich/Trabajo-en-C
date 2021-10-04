@@ -1,9 +1,3 @@
-/*
- * input.h
- *
- *  Created on: 28 sep. 2021
- *      Author: tentative
- */
 
 #ifndef INPUT_H_
 #define INPUT_H_

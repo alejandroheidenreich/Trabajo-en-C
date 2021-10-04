@@ -1,9 +1,3 @@
-/*
- * ExtraEmployees.h
- *
- *  Created on: 28 sep. 2021
- *      Author: tentative
- */
 
 #ifndef EXTRAEMPLOYEES_H_
 #define EXTRAEMPLOYEES_H_
