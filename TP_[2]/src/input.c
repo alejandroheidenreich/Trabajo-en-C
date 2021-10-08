@@ -21,13 +21,13 @@ int PedirValidoNumeroEntero(char mensaje[], char error[]){
 		for (int i=0;i<largo;i++){
 
 
-			if (!(isdigit(pedido[i]))){
+			if (isdigit(pedido[i]) || pedido[0] == 45){
+				fail=0;
+			}
+			else{
 				fail=1;
 				printf("%s",error);
 				break;
-			}
-			else{
-				fail=0;
 			}
 		}
 
@@ -40,10 +40,11 @@ int PedirValidoNumeroEntero(char mensaje[], char error[]){
 
 float PedirValidoNumeroFlotante(char mensaje[], char error[]){
 	char pedido[MAX];
-	int largo, fail;
+	int largo, fail,flag;
 	float resultado;
 
 	do{
+		flag=1;
 		printf("%s", mensaje);
 		fflush(stdin);
 		gets(pedido);
@@ -52,14 +53,17 @@ float PedirValidoNumeroFlotante(char mensaje[], char error[]){
 
 		for (int i=0;i<largo;i++){
 
-
-			if (!(isdigit(pedido[i]))){
+			if (isdigit(pedido[i]) || (pedido[i] == 46 && flag==1) || pedido[0] == 45){
+				if(pedido[i] == 46){
+					flag=0;
+				}
+				fail=0;
+			}
+			else{
 				fail=1;
 				printf("%s",error);
 				break;
-			}
-			else{
-				fail=0;
+
 			}
 		}
 
