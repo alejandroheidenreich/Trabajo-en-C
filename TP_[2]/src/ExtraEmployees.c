@@ -21,7 +21,7 @@ void MostrarUnEmployees(Employee employee[], int pos)
 Employee CrearEmployee(int id){
 	Employee unEmpleado;
 
-	if(id<1000){
+	if(id<0){
 
 		unEmpleado.id = id;
 		IngresarCadena("Ingrese Nombre del Empleado: ", unEmpleado.name);
@@ -47,7 +47,7 @@ int ModifyEmployee(Employee* list, int len){
 
 	id=IngresarEntero("Ingrese ID del Empleado: ", 1,1000);
 
-	posEmpleado = findEmployeeById(list, len,id);
+	posEmpleado = findEmployeeById(list, len, id);
 
 	if(posEmpleado  == -1 || list[posEmpleado].isEmpty==1 ){
 		printf("ERROR - Empleado no encontrado\n");
