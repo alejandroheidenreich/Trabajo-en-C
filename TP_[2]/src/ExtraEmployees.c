@@ -28,7 +28,7 @@ Employee CrearEmployee(int id){
 		printf("\n");
 		IngresarCadena("Ingrese Apellido del Empleado: ", unEmpleado.lastName);
 		printf("\n");
-		unEmpleado.salary = IngresarFlotante("Ingrese Salario del Empleado: ", 1,1000000);
+		unEmpleado.salary = IngresarFlotante("Ingrese Salario del Empleado: ", 1,10000000);
 		printf("\n");
 		unEmpleado.sector = IngresarEntero("Ingrese Sector del Empleado: ", 1,1000);
 		printf("\n");
@@ -45,7 +45,7 @@ int ModifyEmployee(Employee* list, int len){
 	int posEmpleado;
 	int opcion;
 
-	id=IngresarEntero("Ingrese ID del Empleado: ", 1,1000);
+	id=IngresarEntero("Ingrese ID del Empleado: ", 1,999999999);
 
 	posEmpleado = findEmployeeById(list, len, id);
 
