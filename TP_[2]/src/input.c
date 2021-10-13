@@ -123,7 +123,7 @@ void IngresarCadena(char mensaje[], char cadena[]){
 		}
 		else {
 			for(int i=0; i<largo; i++){
-				if((isdigit(cadena[i]) == 1 && cadena[i]!=32) || (cadena[i-1]==32 && cadena[i]==32) || (cadena[i-1]==32 && cadena[i]==32)  || (largo<5 && cadena[i]==32)){
+				if((isdigit(cadena[i]) == 1 && cadena[i]!=32) || (cadena[i-1]==32 && cadena[i]==32)  || (largo<5 && cadena[i]==32)){
 					flagE=1;
 					break;
 				}

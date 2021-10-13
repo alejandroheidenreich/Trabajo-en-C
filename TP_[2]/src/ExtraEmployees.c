@@ -21,7 +21,7 @@ void MostrarUnEmployees(Employee employee[], int pos)
 Employee CrearEmployee(int id){
 	Employee unEmpleado;
 
-	if(id<0){
+	if(id>0){
 
 		unEmpleado.id = id;
 		IngresarCadena("Ingrese Nombre del Empleado: ", unEmpleado.name);
@@ -45,7 +45,7 @@ int ModifyEmployee(Employee* list, int len){
 	int posEmpleado;
 	int opcion;
 
-	id=IngresarEntero("Ingrese ID del Empleado: ", 1,999999999);
+	id=IngresarEntero("Ingrese ID del Empleado: ", 1,9999999);
 
 	posEmpleado = findEmployeeById(list, len, id);
 
