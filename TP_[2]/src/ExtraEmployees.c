@@ -111,8 +111,17 @@ void EmpleadosSalariosMayores(Employee* list, int len, float salario){
 			MostrarUnEmployees(list, i);
 		}
 	}
-
-
 }
 
+int VerificarEmpleadoCargado(Employee* list, int len){
+	int check=0;
 
+	for (int i=0; 1<len; i++){
+		if(list[i].isEmpty == 1){
+			check=1;
+			break;
+		}
+	}
+
+	return check;
+}

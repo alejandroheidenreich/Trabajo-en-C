@@ -123,6 +123,10 @@ int main(void) {
 			else{
 				printf("Ningun empleado ha sido dado de alta.\n");
 			}
+			verify = VerificarEmpleadoCargado(listaEmpleados, EMP);
+			if(verify==1){
+				flagCarga=0;
+			}
 			system("pause");
 			break;
 

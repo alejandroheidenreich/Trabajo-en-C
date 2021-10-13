@@ -37,4 +37,11 @@ float TotalSalarios(Employee* list, int len, int* cantidadEmpleados);
 /// @param salario recibe un float como salario promedio
 /// muestra los empleados que superan el salario
 void EmpleadosSalariosMayores(Employee* list, int len, float salario);
+
+/// @fn int VerificarEmpleadoCargado(Employee*, int)
+/// @param list recibe un array de la estructura Employee
+/// @param len recibe el largo del array
+/// @return devuelve 0 si no todos los valores del campo isEmpty son 0, en caso contrario 1
+int VerificarEmpleadoCargado(Employee* list, int len);
+
 #endif /* EXTRAEMPLOYEES_H_ */
