@@ -48,14 +48,17 @@ int addEmployee(Employee* list, int len, int id, char name[],char lastName[],flo
 
 int findEmployeeById(Employee* list, int len, int id)
 {
-	int i = -1;
+	int i;
 
 		if(list != NULL && (len<1000 || len>1)){
 			i = 0;
 			for(i=0; i<len; i++){
-				if(list[i].id==id){
+				if(list[i].id==id && list[i].isEmpty==0){
 					break;
 				}
+			}
+			if(i==1000){
+				i=-1;
 			}
 		}
 
