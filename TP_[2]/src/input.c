@@ -82,7 +82,7 @@ int IngresarEntero(char mensaje[],int min,int max){
 	numero = PedirValidoNumeroEntero(mensaje,"ERROR DATO INVALIDO - ");
 
 	while(numero <min || numero > max){
-		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
+		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max-1);
 
 		numero = PedirValidoNumeroEntero(mensaje,"ERROR DATO INVALIDO - ");
 	}
@@ -96,7 +96,7 @@ float IngresarFlotante(char mensaje[],int min,int max){
 
 	numero = PedirValidoNumeroFlotante(mensaje, "ERROR DATO INVALIDO - ");
 	while(numero <min || numero > max){
-		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max);
+		printf("ERROR DATO INVALIDO (%d-%d) - ",min,max-1);
 		numero = PedirValidoNumeroFlotante(mensaje, "ERROR DATO INVALIDO - ");
 	}
 
