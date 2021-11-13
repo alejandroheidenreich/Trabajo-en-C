@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include <ctype.h>
 #include <string.h>
+#include "input.h"
 #include "Employee.h"
 #include "parser.h"
 
@@ -17,6 +18,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
 
 		int contador=0;
+		int checkConvert;
 		int verify;
 		Employee* aux;
 		char idStr[50];
@@ -28,9 +30,14 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 		fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",idStr,nombreStr,hsStr,sueldoStr);
 
 		while(!feof(pFile)){
+			checkConvert=0;
 			aux = employee_new();
 			fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",idStr,nombreStr,hsStr,sueldoStr);
-			if(CadenaAEntero(idStr, &id)==1 && CadenaAEntero(hsStr, &hs)==1 && CadenaAEntero(sueldoStr, &sueldo)==1){
+			checkConvert+=CadenaAEntero(idStr, &id);
+			checkConvert+=CadenaAEntero(hsStr, &hs);
+			checkConvert+=CadenaAEntero(sueldoStr, &sueldo);
+
+			if(strlen(nombreStr) != 0 && checkConvert==3){
 				aux = employee_newArguments(id, nombreStr, hs, sueldo);
 				if(aux != NULL){
 					verify = ll_add(pArrayListEmployee,aux);

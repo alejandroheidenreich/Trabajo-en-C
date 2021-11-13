@@ -27,6 +27,7 @@ int main()
     int option;
     //int flagCarga=0;
     int flagSave=0;
+    int flagCarga=0;
     int idEmpleado=1;
     int exit=0;
     int verify;
@@ -58,6 +59,7 @@ int main()
             	if(idEmpleado!=0){
             		printf("Data cargada desde texto\n");
             		controller_setIDUpdate("id.csv", idEmpleado);
+            		flagCarga=1;
             	}
             	else{
             		printf("Error en la carga desde texto\n");
@@ -69,6 +71,7 @@ int main()
             	if(verify){
             		printf("Data cargada desde binario\n");
             		idEmpleado=controller_loadID("id.csv");
+            		flagCarga=1;
             		if(idEmpleado==-1){
             			printf("Error en la carga del ID\n");
             		}
@@ -84,64 +87,95 @@ int main()
             		idEmpleado++;
             		controller_setIDUpdate("id.csv", idEmpleado);
             		flagSave=0;
+            		flagCarga=1;
             	}
             	system("pause");
             	break;
             case 4:
-            	verify=controller_editEmployee(listaEmpleados);
-            	if(verify){
-            		printf("Empleado nodificado");
-            		flagSave=0;
+            	if(flagCarga==1){
+					verify=controller_editEmployee(listaEmpleados);
+					if(verify){
+						printf("Empleado nodificado");
+						flagSave=0;
+					}
+            	}
+            	else{
+            		printf("No hay empleados cargados");
             	}
             	system("pause");
             	break;
             case 5:
-            	verify=controller_removeEmployee(listaEmpleados);
-            	if(verify){
-            		printf("Empleado dado de baja\n");
-            		flagSave=0;
+            	if(flagCarga==1){
+					verify=controller_removeEmployee(listaEmpleados);
+					if(verify){
+						printf("Empleado dado de baja\n");
+						flagSave=0;
+					}
+            	}
+            	else{
+            		printf("No hay empleados cargados");
             	}
             	system("pause");
             	break;
             case 6:
-            	printf("Lista de Empleados\n");
-            	controller_ListEmployee(listaEmpleados);
+            	if(flagCarga==1){
+					printf("Lista de Empleados\n");
+					controller_ListEmployee(listaEmpleados);
+            	}
+            	else{
+            		printf("No hay empleados cargados");
+            	}
             	system("pause");
             	break;
             case 7:
-            	verify=controller_sortEmployee(listaEmpleados);
-            	if(verify==1){
-            		printf("Lista de Empleados Ordenada por ID\n");
-            	}
-            	else if(verify==2){
-            		printf("Lista de Empleados Ordenada por Nombre\n");
-            	}
-            	else if(verify==3){
-            		printf("Lista de Empleados Ordenada por Horas Trabajadas\n");
-            	}
-            	else if(verify==4){
-            		printf("Lista de Empleados Ordenada por Sueldo\n");
+            	if(flagCarga==1){
+					verify=controller_sortEmployee(listaEmpleados);
+					if(verify==1){
+						printf("Lista de Empleados Ordenada por ID\n");
+					}
+					else if(verify==2){
+						printf("Lista de Empleados Ordenada por Nombre\n");
+					}
+					else if(verify==3){
+						printf("Lista de Empleados Ordenada por Horas Trabajadas\n");
+					}
+					else if(verify==4){
+						printf("Lista de Empleados Ordenada por Sueldo\n");
+					}
+					else{
+						printf("La Lista de Empleados no ha sido Ordenada\n");
+					}
             	}
             	else{
-            		printf("La Lista de Empleados no ha sido Ordenada\n");
+            		printf("No hay empleados cargados");
             	}
             	system("pause");
             	break;
             case 8:
-                verify=controller_saveAsText("data.csv",listaEmpleados);
-                 if(verify){
-                	 printf("Archivo guardado como texto\n");
-                	 controller_setIDUpdate("id.csv", idEmpleado);
-                	 flagSave=1;
-                 }
+            	if(flagCarga==1){
+            		verify=controller_saveAsText("data.csv",listaEmpleados);
+					if(verify){
+						 printf("Archivo guardado como texto\n");
+						 controller_setIDUpdate("id.csv", idEmpleado);
+						 flagSave=1;
+					}
+            	}
+            	else{
+            		printf("No hay empleados cargados");
+            	}
                  system("pause");
                  break;
             case 9:
-            	verify=controller_saveAsBinary("data.bin",listaEmpleados);
-            	if(verify){
-            		printf("Archivo guardado como binario\n");
-            		controller_setIDUpdate("id.csv", idEmpleado);
-            		flagSave=1;
+            	if(flagCarga==1){
+					verify=controller_saveAsBinary("data.bin",listaEmpleados);
+					if(verify){
+						printf("Archivo guardado como binario\n");
+						controller_setIDUpdate("id.csv", idEmpleado);
+						flagSave=1;
+					}
+            	}
+            	else{
+            		printf("No hay empleados cargados");
             	}
             	system("pause");
             	break;
