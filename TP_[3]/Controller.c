@@ -97,7 +97,8 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 
 		if(pFile!=NULL){
 			ll_clear(pArrayListEmployee);
-			check=parser_EmployeeFromText(pFile,pArrayListEmployee);
+			parser_EmployeeFromText(pFile,pArrayListEmployee);
+			check=1;
 		}
 
 		fclose(pFile);
@@ -149,7 +150,14 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 	Employee unCliente;
 
 	if(pArrayListEmployee != NULL){
-		idEmpleado=controller_loadID("id.csv");
+
+		if(ll_len(pArrayListEmployee) == 0){
+			idEmpleado=1;
+			controller_setIDUpdate("id.csv", idEmpleado);
+		}
+		else{
+			idEmpleado=controller_loadID("id.csv");
+		}
 
 		if(idEmpleado != -1){
 			check=1;
