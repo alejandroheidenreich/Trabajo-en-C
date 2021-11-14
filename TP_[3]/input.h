@@ -2,9 +2,19 @@
 #ifndef INPUT_H_
 #define INPUT_H_
 
+/// @fn int ValidarCadenaComoEntero(char[])
+/// @param cadena
+/// valida si la cadena es un numero entero
+/// @return check
 int ValidarCadenaComoEntero(char cadena[]);
 
+/// @fn int CadenaAEntero(char[], int*)
+/// @param cadena
+/// @param entero
+/// convierte la cadena en entero y la devuelve por puntero
+/// @return check
 int CadenaAEntero(char cadena[], int* entero);
+
 /// @fn int PedirValidoNumeroCUIT(char[], char[], char[])
 /// @param mensaje se recibe para imprimir
 /// @param error se recibe para imprimir en caso de error de validacion

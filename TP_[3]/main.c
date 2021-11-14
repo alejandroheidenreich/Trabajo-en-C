@@ -47,13 +47,8 @@ int main()
     	printf("9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\n");
     	printf("10. Salir\n");
 
-    	option = IngresarEntero("Ingrese una opcion\n",0,10);
-        switch(option)
-        {
-        	case 0:
-        		idEmpleado=1001;
-        		controller_setIDUpdate("id.csv", idEmpleado);
-        		break;
+    	option = IngresarEntero("Ingrese una opcion\n",1,10);
+        switch(option){
             case 1:
             	idEmpleado=controller_loadFromText("data.csv",listaEmpleados);
             	if(idEmpleado!=0){
@@ -67,17 +62,14 @@ int main()
             	system("pause");
                 break;
             case 2:
-            	verify=controller_loadFromBinary("data.bin",listaEmpleados);
-            	if(verify){
+            	idEmpleado=controller_loadFromBinary("data.bin",listaEmpleados);
+            	if(idEmpleado != 0){
             		printf("Data cargada desde binario\n");
-            		idEmpleado=controller_loadID("id.csv");
+            		controller_setIDUpdate("id.csv", idEmpleado);
             		flagCarga=1;
-            		if(idEmpleado==-1){
-            			printf("Error en la carga del ID\n");
-            		}
-            		else{
-            		    printf("ID incializado en %d\n",idEmpleado);
-            		}
+            	}
+            	else{
+            		printf("Error en la carga desde Binario\n");
             	}
             	system("pause");
                 break;

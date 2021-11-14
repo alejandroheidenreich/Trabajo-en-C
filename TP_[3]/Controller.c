@@ -20,9 +20,7 @@ int controller_setIDUpdate(char* path, int idEmpleado)
 
 		if(pFile!=NULL){
 			fprintf(pFile,"%s",aux);
-			//fwrite(&idEmpleado, sizeof(int), 1, pFile);
 			check = 1;
-			//printf("Creaste el archivo ID\n");
 		}
 
 		fclose(pFile);
@@ -41,11 +39,9 @@ int controller_loadID(char* path){
 
 		if(pFile!=NULL){
 			fread(&aux, sizeof(aux), 1, pFile);
-
 		}
 
 		fclose(pFile);
-
 		id=atoi(aux);
 	}
 
@@ -239,14 +235,17 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 	if(pArrayListEmployee != NULL){
 		largo = ll_len(pArrayListEmployee);
-		printf("=====================================================\n");
-		printf("|   ID  |        NOMBRE        | HORAS |   SUELDO   |\n");
-		printf("=====================================================\n");
-		for(int i=0; i<largo; i++){
-			aux = (Employee*) ll_get(pArrayListEmployee, i);
-			employee_mostrar(aux);
+		if(largo>0){
+			check=1;
+			printf("=====================================================\n");
+			printf("|   ID  |        NOMBRE        | HORAS |   SUELDO   |\n");
+			printf("=====================================================\n");
+			for(int i=0; i<largo; i++){
+				aux = (Employee*) ll_get(pArrayListEmployee, i);
+				employee_mostrar(aux);
+			}
+			printf("=====================================================\n");
 		}
-		printf("=====================================================\n");
 	}
     return check;
 }

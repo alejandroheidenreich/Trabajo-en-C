@@ -13,20 +13,6 @@ Employee* employee_new(){
 	return unEmpleado;
 }
 
-//Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr, char* sueldoStr){
-//	Employee* unEmpleado;
-//
-//	if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && sueldoStr != NULL){
-//
-//		unEmpleado->id = atoi(idStr);
-//		strcpy(unEmpleado->nombre, nombreStr);
-//		unEmpleado->horasTrabajadas = atoi(horasTrabajadasStr);
-//		unEmpleado->sueldo = atoi(sueldoStr);
-//	}
-//
-//	return unEmpleado;
-//}
-
 void employee_mostrar(Employee* this){
 
 	if(this!=NULL){
@@ -68,13 +54,10 @@ Employee CrearEmployee(int id){
 }
 
 int ModifyEmployee(Employee* unEmpleado){
-
 	int check=0;
 	int opcion;
 
-
 	do{
-
 		employee_mostrar(unEmpleado);
 		printf("\n\tQue dato desea modificar?\n");
 		printf("\t1- NOMBRE\n\t2- HORAS TRABAJADAS\n\t3- SALARIO\n\t4- ATRAS\n\n");
@@ -97,7 +80,6 @@ int ModifyEmployee(Employee* unEmpleado){
 		}
 	}while(opcion!=4);
 
-
 	return check;
 }
 
@@ -105,7 +87,6 @@ int OrdenarPorIDEmployee(void* empleado1, void* empleado2){
 	int check;
 	Employee* unEmpleado;
 	Employee* otroEmpleado;
-
 
 	if(empleado1!=NULL && empleado2!=NULL){
 		check=0;
@@ -165,7 +146,6 @@ int OrdenarPorSueldoEmployee(void* empleado1, void* empleado2){
 	int check;
 	Employee* unEmpleado;
 	Employee* otroEmpleado;
-
 
 	if(empleado1!=NULL && empleado2!=NULL){
 		check=0;
