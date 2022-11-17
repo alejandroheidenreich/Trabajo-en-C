@@ -336,11 +336,9 @@ int ll_isEmpty(LinkedList* this)
     int largo;
     if(this !=NULL){
     	largo = ll_len(this);
+		returnAux = 1;
     	if(largo!=0){
     		returnAux = 0;
-    	}
-    	else{
-    		returnAux = 1;
     	}
     }
     return returnAux;
