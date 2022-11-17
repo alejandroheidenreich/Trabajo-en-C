@@ -382,25 +382,13 @@ int ll_push(LinkedList* this, int index, void* pElement)
 void* ll_pop(LinkedList* this,int index)
 {
     void* returnAux = NULL;
-    Node* nodoEliminado;
-    Node* aux;
+	int largo;
 
     if(this != NULL){
-    	nodoEliminado = getNode(this,index);
-    	if(nodoEliminado != NULL){
-    		if(index == 0){
-    			this->pFirstNode = nodoEliminado->pNextNode;
-    		}
-    		else {
-    			aux = getNode(this, index-1);
-    			if(aux != NULL){
-    				aux->pNextNode = nodoEliminado->pNextNode;
-    			}
-    		}
-    		returnAux = 0;
-    		returnAux =nodoEliminado->pElement;
-    		this->size--;
-    	}
+		if(index > -1 && index < ll_len(this)){
+			returnAux = ll_get(this,index);
+			ll_remove(this,int index)
+		}
     }
     return returnAux;
 }
