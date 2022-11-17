@@ -359,10 +359,10 @@ int ll_push(LinkedList* this, int index, void* pElement)
 	int verify;
 
 	if(this != NULL ){ //&& pElement != NULL
-	    	verify = addNode(this, index, pElement);
-	    	if(verify==0){
-	    		returnAux = 0;
-	    	}
+		verify = addNode(this, index, pElement);
+		if(verify==0){
+			returnAux = 0;
+		}
 	}
 
 	return returnAux;
