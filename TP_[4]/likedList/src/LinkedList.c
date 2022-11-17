@@ -261,7 +261,7 @@ int ll_clear(LinkedList* this)
     if (this != NULL){
     	largo = ll_len(this);
     	for(int i=0; i< largo; i++){
-    		verify = ll_remove(this,i);
+    		verify = ll_remove(this,0);
     		if(verify==-1){
     			returnAux = -1;
     			break;
